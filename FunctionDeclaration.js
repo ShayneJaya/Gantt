@@ -68,22 +68,20 @@ function calculateDuration(startDate, endDate) {
   return duration;
 }
 
-// (Currently not Utilized) moves a task from one row to another by updating the original and new rows' task lists
-function updateTaskRow(chartData, task, originalRowId, newRowId) {
-  const originalRow = chartData.find(row => row.id === originalRowId);
-  const newRow = chartData.find(row => row.id === newRowId);
+// initialization function that sets up default options for dragging and resizing tasks
+/* function(options) {
+  $.extend(options, {
+    dnd: { move: { tasks: "enabled" } }, // enables dragging and dropping of tasks
+    taskDefaults: { resizable: "enabled", height: 30 }, // allows tasks to be resized and sets their height
+    rowDefaults: { height: 40 } // sets the height of each row
+  });
+  var currDate = new Date();
+  var referenceLine = [ { value: currDate.toISOString() } ];
+  options.referenceObjects = referenceLine;
+  console.log("options",options); 
+  return options; // returns the updated options
+} */
 
-  if (!originalRow || !newRow) {
-    console.error("Row not found."); // if either row doesn't exist, log an error
-    return;
-  }
-
-  
-  originalRow.tasks = originalRow.tasks.filter(t => t.id !== task.id);
-
-
-  newRow.tasks.push(task);
-}
 
 
 
