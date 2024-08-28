@@ -15,9 +15,24 @@ function convertToMMDDYYYY(isoDate) {
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
-  });
+  }); .020
 }
 
+/* function updateTaskRow(chartData, task, originalRowId, newRowId) {
+  const originalRow = chartData.find(row => row.id === originalRowId);
+  const newRow = chartData.find(row => row.id === newRowId);
+
+  if (!originalRow || !newRow) {
+    console.error("Row not found."); // if either row doesn't exist, log an error
+    return;
+  }
+
+  // removes the task from the original row's list of tasks
+  originalRow.tasks = originalRow.tasks.filter(t => t.id !== task.id);
+
+  // adds the task to the new row's list of tasks
+  newRow.tasks.push(task);
+} */
 
 function sortChartRows(chartRows) {
   return chartRows.sort((a, b) => (a.resource < b.resource ? -1 : 1));
@@ -68,19 +83,6 @@ function calculateDuration(startDate, endDate) {
   return duration;
 }
 
-// initialization function that sets up default options for dragging and resizing tasks
-/* function(options) {
-  $.extend(options, {
-    dnd: { move: { tasks: "enabled" } }, // enables dragging and dropping of tasks
-    taskDefaults: { resizable: "enabled", height: 30 }, // allows tasks to be resized and sets their height
-    rowDefaults: { height: 40 } // sets the height of each row
-  });
-  var currDate = new Date();
-  var referenceLine = [ { value: currDate.toISOString() } ];
-  options.referenceObjects = referenceLine;
-  console.log("options",options); 
-  return options; // returns the updated options
-} */
 
 
 
